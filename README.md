@@ -1,17 +1,26 @@
-# Data_Cleaning_with_Pandas
-
 # Project Title
-Data Cleaning and Preparation for Analysis
+Data Cleaning with Pandas
 
 # Overview
-This project focuses on cleaning and preparing a raw dataset for analysis. The dataset contained missing values, inconsistent column names, and redundant columns. The goal was to transform the data into a structured and analysis-ready format.
+This project focuses on cleaning and preparing a raw dataset for analysis. The original dataset contains multiple sheets, but this project uses only three sheets: money supply, interest rate, and mobile money.
+
+The data had missing values, inconsistent column names, and unnecessary columns. The goal was to clean and structure the data into an analysis-ready format.
+
+# Problem Statement
+The raw dataset was not ready for analysis due to:
+
+* Missing values across key variables
+* Inconsistent and unclear column names
+* Presence of irrelevant and empty columns
+* Multi-sheet structure with unused data
 
 # Objectives
 
-1.Clean and standardize column names
-2.Handle missing values
-3.Remove duplicates and irrelevant columns
-4.Prepare dataset for analysis or visualization
+* Clean and standardize column names
+* Handle missing values
+* Remove duplicates and irrelevant columns
+* Work with selected sheets only: money supply, interest rate, and mobile money
+* Prepare dataset for analysis and visualization
 
 # Tools Used
 
@@ -19,32 +28,70 @@ This project focuses on cleaning and preparing a raw dataset for analysis. The d
 * Pandas
 * Jupyter Notebook
 
+# Data Source
+
+ * Bank of Ghana
+ * Ghana Statistical Service
+ * World Bank
+
+# Dataset Description
+The dataset consists of multiple sheets. For this project, only the following were used:
+
+* Mobile Money (Global Findex):
+Usage and ownership across regions
+* Money Supply (Monetary Survey):
+Deposit levels and liquidity trends
+* Interest Rate (Regional and Demographic Data):
+Linked financial indicators to regions and population (39 million estimated from age groups)
+
+Each sheet required cleaning before analysis due to structural inconsistencies and missing data.
+
 # Key Steps
 
-1.Data Inspection:
-* Used info(), describe(), and head() to understand structure and issues.
+1. Data Inspection
+ * Used info(), describe(), and head() to understand structure and issues
+2. Data Cleaning
+ * Standardized column names to consistent format
+ * Replaced empty values with NaN
+ * Handled missing values using forward fill based on dataset structure
+ * Removed empty and unnecessary columns
+ * Selected only relevant sheets for analysis
+3. Data Validation
+ * Checked for duplicates
+ * Verified dataset shape before and after cleaning
+ * Confirmed missing values were handled
 
-2.Data Cleaning:
-* Standardized column names.
-* Handled missing values using forward fill.
-* Removed empty and unnecessary columns.
+# Before Cleaning
 
-3.Data Validation:
-* Checked for duplicates.
-* Verified dataset shape.
-* Confirmed missing values handled.
+* Missing values present
+* Inconsistent column names
+* Unstructured multi-sheet data
+* Redundant and empty columns
+
+# After Cleaning
+
+* Standardized column names
+* Missing values handled appropriately
+* Only relevant sheets retained
+* Clean and structured dataset ready for analysis
 
 # Results
 
-* Clean dataset ready for analysis.
-* Improved data consistency and usability.
+* Clean datasets for money supply, interest rate, and mobile money
+* Data ready for visualization or analysis
 
- # PROJECT STRUCTURE
+# Project Structure
 
-data_cleaning_with_Pandas/
-data/
-raw_data.csv
-cleaned_data.csv
-notebook/
-data_cleaning.ipynb
-scripts
+data-cleaning-with-pandas/
+
+├── data/
+│ ├── raw_data.xlsx
+│ ├── money_supply_cleaned.xlsx
+│ ├── interest_rate_cleaned.xlsx
+│ └── mobile_money_cleaned.xlsx
+
+├── notebook/
+│ └── data_cleaning.ipynb/script
+
+├── README.md
+
